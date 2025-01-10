@@ -45,7 +45,7 @@
 }
 
 .dark-background {
-  --background-color: rgba(15, 15, 15, 0.975);
+  --background-color:var(--background-color) /*rgba(15, 15, 15, 0.975)*/;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #292929f9;
@@ -315,7 +315,7 @@ h6 {
 /* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: #000000;
+    color: #ffffff;
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -692,6 +692,7 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(to bottom, var(--background-color, #010E1B), #ffffff);
 }
 
 .hero img {
@@ -747,7 +748,12 @@ section,
   background-color: var(--accent-color);
 }
 
+/* Media Query for Mobile View */
 @media (max-width: 768px) {
+  .hero img {
+    display: none; /* Hide the image on mobile view */
+  }
+
   .hero h2 {
     font-size: 32px;
   }
